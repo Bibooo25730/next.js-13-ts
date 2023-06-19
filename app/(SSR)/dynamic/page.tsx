@@ -1,8 +1,13 @@
 import {PlashImage} from "@/app/module/plash-image";
 import Image from "next/image";
+import {Alert} from "@/app/Components/bootstrap";
 
 export default async function  Page(){
-    const response = await fetch("https://www.dmoe.cc/random.php?return=json")
+    const response = await fetch("https://www.dmoe.cc/random.php?return=json",
+        {
+             cache:"no-cache"
+        }
+    )
     let result:PlashImage = await response.json()
     // 计算宽高度
     console.log("result",result)
@@ -10,12 +15,14 @@ export default async function  Page(){
     const  height = (width / result.width) * result.height;
     return (
         <div className="d-flex flex-column align-items-center">
-            图片
+            <Alert>
+                lalalalalallalalalalalalalalalaall
+            </Alert>
             <Image
-              src={result.imgurl}
-              width={width}
-              height={height}
-              alt='img'
+                src={result.imgurl}
+                width={width}
+                height={height}
+                alt='img'
             />
         </div>
     )

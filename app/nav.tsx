@@ -13,7 +13,13 @@ export default  function NavBar(){
          <Navbar.Toggle aria-controls="main-navbar" />
          <Navbar.Collapse id="main-navbar">
              <Nav>
-                 <Nav.Link href="/home" active={PathName == '/home'}>hello</Nav.Link>
+                 <Nav.Link href="/static" active={PathName == '/static'}>hello</Nav.Link>
+             </Nav>
+             <Nav>
+                 <Nav.Link href="/dynamic" active={PathName == '/dynamic'}>dynamic</Nav.Link>
+             </Nav>
+             <Nav>
+                 <Nav.Link href="/ISR" active={PathName == '/ISR'}>isr</Nav.Link>
              </Nav>
          </Navbar.Collapse>
      </Container>
